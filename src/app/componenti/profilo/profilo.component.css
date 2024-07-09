@@ -1,0 +1,54 @@
+/* profilo.component.css */
+div {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  margin: 10px 0;
+  color: #666;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffe134;
+}
+
+.back-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-links a:hover {
+  background-color: #f4f2f2;
+  color: #000000;
+}

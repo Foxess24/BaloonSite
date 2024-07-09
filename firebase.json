@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "headers": [
+      {
+        "source": "/immaginiProdotti/**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ]
+  }
+}

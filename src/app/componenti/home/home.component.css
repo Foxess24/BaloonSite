@@ -1,0 +1,66 @@
+/* home.component.css */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.home-section {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+}
+
+.home-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-content {
+  position: relative;
+  z-index: 1;
+}
+
+.text-content h1 {
+  color: #ffcc00;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.about-us {
+  margin-top: 30px;
+}
+
+.about-us h2 {
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.about-us p {
+  color: #555;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.explore-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #333;
+  color: #ffcc00;
+}

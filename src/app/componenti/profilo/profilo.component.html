@@ -1,0 +1,16 @@
+<br /><br /><br /><br />
+<div *ngIf="datiUtente">
+  <h2>Profilo Utente</h2>
+  <p><strong>Nome:</strong> {{ datiUtente.nome }}</p>
+  <p><strong>Cognome:</strong> {{ datiUtente.cognome }}</p>
+  <p><strong>Username:</strong> {{ datiUtente.username }}</p>
+  <p><strong>Email:</strong> {{ datiUtente.email }}</p>
+
+  <br />
+  <button (click)="eliminaAccount()">Elimina Account</button>
+</div>
+<br /><br /><br />
+<div class="back-links">
+  <a routerLink="/home">Back to Home</a>
+</div>
+<br /><br /><br /><br />

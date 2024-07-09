@@ -1,0 +1,46 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-contenuto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sezione-info {
+  margin-bottom: 20px;
+}
+
+.metodi-pagamenti {
+  margin-top: 20px;
+}
+
+.titolo-pagamento {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lista-pagamenti span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-contenuto a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-contenuto a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+.footer-contenuto a:active {
+  color: #fff;
+}

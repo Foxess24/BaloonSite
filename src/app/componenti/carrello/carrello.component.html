@@ -1,0 +1,54 @@
+<br />
+<div class="carrello">
+  <h1>Il tuo carrello:</h1>
+  <!-- Lista dei prodotti nel carrello -->
+  <div *ngFor="let prodotto of carrello" class="prodotto-card">
+    <img
+      [src]="prodotto.urlImg"
+      alt="Immagine Prodotto"
+      class="immagine-prodotto"
+    />
+
+    <div class="informazioni-prodotto">
+      <h4>{{ prodotto.nome }}</h4>
+      <p>Codice: {{ prodotto.codice }}</p>
+      <p>Prezzo unitario: {{ prodotto.prezzo | currency : "EUR" }}</p>
+      <p>Quantità: {{ prodotto.quantita }}</p>
+    </div>
+
+    <div class="dettagli-prodotto">
+      <p>Totale: {{ prodotto.prezzoTotale | currency : "EUR" }}</p>
+      <button (click)="rimuoviDalCarrello(prodotto.id)" class="button-rimuovi">
+        Rimuovi dal carrello
+      </button>
+    </div>
+  </div>
+
+  <!-- Carrello Vuoto-->
+  <div class="carrello-vuoto" *ngIf="carrelloVuoto">
+    <h1 class="carrello-vuoto-titolo">Carrello vuoto</h1>
+    <br /><br />
+    <p>Inserisci prodotti nel carrello per poter procedere all'acquisto.</p>
+    <br /><br /><br />
+  </div>
+
+  <!-- Riepilogo ordine -->
+  <div class="riepilogo-ordine">
+    <div class="totale">
+      <h2 *ngIf="!carrelloVuoto">Procedi al Checkout:</h2>
+      <p *ngIf="!carrelloVuoto">
+        Totale Ordine: {{ totale | currency : "EUR" }}
+      </p>
+      <br />
+      <p *ngIf="!carrelloVuoto">Procedi al Checkout:</p>
+      <h2 *ngIf="carrelloVuoto">Immpossibile Procedere al Checkout</h2>
+      <div
+        [hidden]="carrelloVuoto || !pagamentoRefPayPal"
+        #pagamentoRefPayPal
+      ></div>
+      <br />
+    </div>
+  </div>
+  <br />
+</div>
+<br /><br />

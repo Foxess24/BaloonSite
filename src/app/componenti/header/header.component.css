@@ -1,0 +1,67 @@
+header {
+  background-color: #fff; /* Colore di sfondo dell'header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 37px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra per l'header */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nome-brand {
+  font-size: 3em;
+  font-family: "Bungee Spice", sans-serif;
+}
+
+.punto {
+  color: black;
+  font-size: 3.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active,
+nav ul li a.active {
+  background-color: rgb(237, 236, 236);
+  color: goldenrod;
+}
+
+.auth a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: 2px solid goldenrod;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth a:hover {
+  background-color: rgb(54, 54, 54);
+  color: rgb(255, 255, 255);
+}

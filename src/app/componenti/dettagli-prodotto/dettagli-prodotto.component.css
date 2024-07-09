@@ -1,0 +1,89 @@
+.titolo h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.dettagli-prodotto {
+  width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.dettagli-prodotto-container {
+  display: flex;
+  align-items: center;
+}
+
+.dettagli-prodotto-immagine {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.dettagli-prodotto-immagine img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover; /*ridimensionamento img */
+}
+
+.dettagli-prodotto-info {
+  flex: 2;
+}
+
+.dettagli-prodotto-info h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.dettagli-prodotto-info p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.dettagli-prodotto-quantita {
+  margin-top: 20px;
+}
+
+.dettagli-prodotto-quantita label {
+  margin-right: 10px;
+}
+
+.bottoni {
+  margin-top: 20px;
+  display: flex;
+}
+
+.btnAdd,
+.btnBack {
+  background-color: #ffc107;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btnAdd:hover,
+.btnBack:hover {
+  background-color: #e0a800;
+}
+
+/*Prodotto non disponibile*/
+.prodotto-non-disponibile {
+  color: #ff0000;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}

@@ -1,0 +1,53 @@
+<br /><br /><br />
+<div class="titolo">
+  <h1>Dettagli pallone:</h1>
+</div>
+<br />
+<div class="dettagli-prodotto">
+  <br />
+  <div class="dettagli-prodotto-container">
+    <div class="dettagli-prodotto-immagine">
+      <!--Immagine-->
+      <img [src]="pallone?.url" />
+    </div>
+    <div class="dettagli-prodotto-info">
+      <!--Nome-->
+      <h1>{{ pallone?.nome }}</h1>
+      <!--Codice-->
+      <p>Cod: {{ pallone?.codice }}</p>
+      <!--Descrizione-->
+      <p>Descrizione: {{ pallone?.descrizione }}</p>
+      <br />
+      <!--Prezzo-->
+      <p>Prezzo: {{ pallone?.prezzo | currency : "EUR" }}</p>
+      <div class="dettagli-prodotto-quantita">
+        <!--Quantita-->
+        <label for="quantita">Quantità:</label>
+        <input
+          type="number"
+          id="quantita"
+          [(ngModel)]="quantita"
+          min="1"
+          [max]="quantitaMax"
+        />
+      </div>
+      <br /><br />
+      <div class="bottoni" *ngIf="disponibile">
+        <button class="btnAdd" (click)="aggiungiAlCarrello()">
+          Aggiungi al Carrello
+        </button>
+        <button class="btnBack" (click)="tornaIndietro()">
+          Torna Indietro
+        </button>
+      </div>
+      <div>
+        <p class="prodotto-non-disponibile" *ngIf="!disponibile">
+          Il prodotto non è disponibile al momento.
+        </p>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+<br /><br /><br />
+<br /><br />

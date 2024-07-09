@@ -1,0 +1,110 @@
+.carrello {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.carrello h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 100%;
+}
+
+/*css x card prodotti*/
+.prodotto-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.immagine-prodotto {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.informazioni-prodotto {
+  flex-grow: 1;
+}
+
+.informazioni-prodotto h4 {
+  margin-bottom: 10px;
+}
+
+.dettagli-prodotto {
+  margin-left: auto;
+  text-align: right;
+}
+
+.button-rimuovi {
+  background-color: #cc2e2e;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-checkout:hover {
+  background-color: #ae2727;
+}
+
+/*css x card di riepilogo ordine*/
+.riepilogo-ordine {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.riepilogo-ordine h2 {
+  margin-bottom: 10px;
+}
+
+/*css x card di carello vuoto*/
+.carrello-vuoto {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carrello-vuoto h1 {
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+}
+
+.carrello-vuoto p {
+  margin: 0;
+}

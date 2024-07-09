@@ -1,0 +1,16 @@
+<div class="palloni-container">
+  <h1>Palloni</h1>
+  <div class="card-container">
+    <div class="card" *ngFor="let pallone of palloni">
+      <img [src]="pallone.url" alt="{{ pallone.nome }}" />
+      <div class="card-info">
+        <h2>{{ pallone.nome }}</h2>
+        <p>Codice: {{ pallone.codice }}</p>
+        <p>{{ pallone.descrizione }}</p>
+        <button class="btn-InfoProd" (click)="apriDettagli(pallone)">
+          Acquista
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

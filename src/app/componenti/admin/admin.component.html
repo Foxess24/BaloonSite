@@ -1,0 +1,119 @@
+<div class="admin-container">
+  <h1>Dashboard Admin</h1>
+
+  <!-- Bottoni per muoversi sulla Dashboard Admin -->
+  <div class="admin-bottoni">
+    <button (click)="goToAggiungiProdotto()">Aggiungi Prodotto</button>
+    <button (click)="goToRimuoviProdotto()">Rimuovi Prodotto</button>
+    <button (click)="goToListaOrdini()">Visualizza Ordini</button>
+  </div>
+  <br />
+
+  <!-- Aggiungi Prodotto Dashboard -->
+  <div class="admin-sezione" *ngIf="showViewAggiungiProd">
+    <h3>Aggiungi Prodotto</h3>
+    <div>
+      <label for="nomeProd">Nome Prodotto:</label>
+      <input type="text" id="nomeProd" [(ngModel)]="nomeProd" required />
+    </div>
+
+    <div>
+      <label for="codiceProd">Codice Prodotto:</label>
+      <input type="text" id="codiceProd" [(ngModel)]="codiceProd" required />
+    </div>
+
+    <div>
+      <label for="quantitaProd">Quantità Disponibile:</label>
+      <input
+        type="number"
+        id="quantitaProd"
+        [(ngModel)]="quantitaProd"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="prezzoProd">Prezzo Prodotto (Euro):</label>
+      <input type="text" id="prezzoProd" [(ngModel)]="prezzoProd" required />
+    </div>
+
+    <div>
+      <label for="descrizioneProd">Descrizione Prodotto:</label>
+      <textarea
+        id="descrizioneProd"
+        [(ngModel)]="descrizioneProd"
+        required
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="imgProdotto">Immagine Prodotto:</label>
+      <input
+        type="file"
+        (change)="onImgSelezionata($event)"
+        accept="image/*"
+        required
+      />
+    </div>
+    <br />
+    <button (click)="aggiungiProdotto()">Aggiungi Prodotto</button>
+  </div>
+
+  <!-- Rimuovi Prodotto Dashboard -->
+  <div class="admin-sezione" *ngIf="showViewRimuoviProd">
+    <h3>Rimuovi Prodotto</h3>
+    <div class="rimuovi-prodotto-card" *ngFor="let pallone of palloni">
+      <img [src]="pallone.url" alt="{{ pallone.nome }}" />
+      <div class="informazioni-prodotto">
+        <h3>{{ pallone.nome }}</h3>
+        <p>Codice: {{ pallone.codice }}</p>
+        <p>Quantità: {{ pallone.quantita }}</p>
+        <p>Prezzo: {{ pallone.prezzo }}</p>
+      </div>
+      <div class="dettagli-prodotto">
+        <!--
+          Utilizzo pallone.id come REF al prodotto su FireStore
+          (pallone.id contiene la key del prodotto sul DB)
+        -->
+        <button class="rimuovi-button" (click)="rimuoviProdotto(pallone.id)">
+          Rimuovi Prodotto
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-sezione" *ngIf="showViewOrdini">
+    <h3>Visualizza Ordini</h3>
+    <div *ngFor="let ordine of ordini" class="ordine-card">
+      <div class="ordine-info">
+        <p><strong>ID Ordine:</strong> {{ ordine.id }}</p>
+        <div class="prodotti-quantita">
+          <div *ngFor="let prodotto of ordine.prodotti">
+            <p>{{ prodotto.id }} - Quantità: {{ prodotto.quantita }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="prezzo-and-btn">
+        <h3>
+          <strong>Prezzo Totale:</strong>
+          {{ ordine.prezzo | currency : "EUR" }}
+        </h3>
+        <!-- Verifica se l'ordine è evaso -->
+        <ng-container *ngIf="ordine.evaso; else evasoTemplate">
+          <p>Ordine evaso</p>
+        </ng-container>
+        <ng-template #evasoTemplate>
+          <button class="btn-evaso" (click)="contrassegnaEvaso(ordine.id)">
+            Contrassegna come evaso
+          </button>
+        </ng-template>
+        <br />
+        <button class="btn-elimina" (click)="eliminaOrdine(ordine.id)">
+          Elimina Ordine
+        </button>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
+  <br /><br /><br />
+</div>

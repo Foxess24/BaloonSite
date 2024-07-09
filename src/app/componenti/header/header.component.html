@@ -1,0 +1,33 @@
+<header>
+  <div class="logo">
+    <span class="nome-brand">Balon</span>
+    <span class="punto">.</span>
+    <span class="nome-brand">d'Or</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li>
+        <a
+          routerLink="/palloni"
+          routerLinkActive="active"
+          [ngClass]="{ active: isPalloniActive }"
+        >
+          Palloni
+        </a>
+      </li>
+      <li><a routerLink="/carrello" routerLinkActive="active">Carrello</a></li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="auth" *ngIf="!loggedIn">
+    <a routerLink="/login">LogIn</a>
+    <a routerLink="/signup">SignUp</a>
+  </div>
+  <div class="auth" *ngIf="loggedIn">
+    <a routerLink="profilo">Profilo</a>
+    <a routerLink="home" (click)="logout()">Logout</a>
+  </div>
+</header>
